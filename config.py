@@ -1,20 +1,20 @@
 import tweepy
-from secrets import *
-
+from dotenv import load_dotenv
+load_dotenv()
+import os
 import logging
-
 
 logger = logging.getLogger()
 
 def create_api():
-    consumer_key = key[0]
-    consumer_secret = key[1]
-    access_token = key[2]
-    access_token_secret = key[3]
+    consumer_key = os.environ.get("CONSUMER_KEY")
+    consumer_secret = os.environ.get("CONSUMER_SECRET")
+    access_token = os.environ.get("ACCESS_TOKEN")
+    access_token_secret = os.environ.get("ACCESS_TOKEN_SECRET")
 
     auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
     auth.set_access_token(access_token, access_token_secret)
-    api = tweepy.API(auth, wait_on_rate_limit=True, wait_on_rate_limit_notify=True)
+    api = tweepy.API(auth)
     try:
         api.verify_credentials()
     except Exception as e:
