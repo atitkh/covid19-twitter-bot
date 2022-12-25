@@ -1,6 +1,6 @@
 import requests
 import time
-import main as bot
+import main_bot_api as bot
 
 def covid_stats():
     global prev_record
