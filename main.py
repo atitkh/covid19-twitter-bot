@@ -1,6 +1,7 @@
 import requests
 import time
 import main_bot_api as bot
+import tweepy
 
 def covid_stats():
     global prev_record
