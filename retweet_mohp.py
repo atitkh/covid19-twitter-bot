@@ -1,4 +1,4 @@
-import main_bot as bot
+import main as bot
 import time
 
 while True:
