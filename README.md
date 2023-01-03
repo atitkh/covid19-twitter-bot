@@ -28,7 +28,7 @@ ACCESS_TOKEN_SECRET: Your Twitter API access token secret.
 ```
 
 5. Run the bot:
-```
+```           
 python main.py
 ```
 
